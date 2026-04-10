@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido a TEO · Bot-On</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+      color: #1a1f5e;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: #1a1f5e;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header__logo-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .header__logo-name {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+
+    .header__logo-sub {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      color: #6AB7EA;
+      margin-top: 2px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── SECCIÓN 1: BIENVENIDA ── */
+    .hero {
+      background: #6AB7EA;
+      padding: 120px 24px 80px;
+    }
+
+    .hero__inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      background: #1a1f5e;
+      color: #ffffff;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero__headline {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      color: #1a1f5e;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero__body {
+      color: rgba(26, 31, 94, 0.8);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* ── SECCIÓN 2: QUÉ HACE TEO ── */
+    .features {
+      background: #ffffff;
+      padding: 80px 24px;
+    }
+
+    .features__inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: block;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #008bdb;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 34px);
+      color: #1a1f5e;
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 680px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #f0f4f8;
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid rgba(0, 139, 219, 0.12);
+    }
+
+    .card__number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #008bdb, #6AB7EA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .card__title {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #1a1f5e;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .card__body {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: rgba(26, 31, 94, 0.75);
+      line-height: 1.6;
+    }
+
+    /* ── SECCIÓN 3: POR QUÉ ESTÁS AQUÍ ── */
+    .why {
+      background: #6AB7EA;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .why__inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .why__title {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 34px);
+      color: #1a1f5e;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .why__body {
+      color: rgba(26, 31, 94, 0.8);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* ── SECCIÓN 4: FORMULARIO TALLY ── */
+    .form-section {
+      background: #ffffff;
+      padding: 60px 24px;
+    }
+
+    .form-section__inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── SECCIÓN 5: CIERRE ── */
+    .closing {
+      background: #1a1f5e;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .closing__inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .closing__title {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 2.8vw, 30px);
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .closing__body {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #12174a;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .footer__copy {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 8px;
+    }
+
+    .footer__disclaimer {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.25);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__logo-wrap">
+      <span class="header__logo-name">Bot-On</span>
+      <span class="header__logo-sub">presenta TEO</span>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 1: BIENVENIDA -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__badge">Bot-On TEO · Acceso Beta</span>
+      <h1 class="hero__headline" id="hero-headline">Hola. Conoce a TEO.</h1>
+      <p class="hero__body">
+        TEO es la inteligencia artificial de Bot-On que entrena tu mente todos los días. Solo 3 minutos por WhatsApp. Sin apps, sin rodeos, sin relleno.
+      </p>
+      <p class="hero__body">
+        Eres usuario beta. Eso significa que lo que hagas estos días construye el producto. Tu experiencia importa más de lo que crees.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: QUÉ HACE TEO -->
+  <section class="features">
+    <div class="features__inner">
+      <span class="section-label">Qué hace TEO</span>
+      <h2 class="section-title">Directo. Concreto. Sin excusas.</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card__number">1</div>
+          <h3 class="card__title">Evalúa tu perfil cognitivo</h3>
+          <p class="card__body">Desde el primer día TEO entiende cómo funciona tu mente. Sin tests largos.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">2</div>
+          <h3 class="card__title">Un ejercicio diario por WhatsApp</h3>
+          <p class="card__body">3 minutos. Concreto. A la hora que elijas. Sin descargar nada.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">3</div>
+          <h3 class="card__title">Se adapta con cada sesión</h3>
+          <p class="card__body">La IA de Bot-On ajusta cada ejercicio según tu avance. No hay dos perfiles iguales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: POR QUÉ ESTÁS AQUÍ -->
+  <section class="why">
+    <div class="why__inner">
+      <h2 class="why__title">Tu opinión construye el producto.</h2>
+      <p class="why__body">
+        5 minutos para contarnos cómo va. No hay respuestas correctas, solo las tuyas. Lo que escribas aquí llega directo al equipo de Bot-On.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: FORMULARIO TALLY -->
+  <section class="form-section">
+    <div class="form-section__inner">
+      <iframe data-tally-src="https://tally.so/embed/44ooBB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Feedback Beta TEO"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: CIERRE -->
+  <section class="closing">
+    <div class="closing__inner">
+      <h2 class="closing__title">Bienvenido al inicio de algo que vale la pena. ⚡</h2>
+      <p class="closing__body">El equipo de Bot-On está contigo en cada sesión.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__copy">© 2026 Bot-On. Todos los derechos reservados.</p>
+    <p class="footer__disclaimer">Bot-On TEO no reemplaza la consulta médica profesional. El entrenamiento cognitivo es un servicio de bienestar mental complementario.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var nombre = params.get('nombre');
+      if (nombre) {
+        nombre = nombre.trim();
+      }
+      if (nombre) {
+        document.getElementById('hero-headline').textContent = 'Hola ' + nombre + '. Conoce a TEO.';
+      }
+    })();
+  </script>
+
+</body>
+</html>
