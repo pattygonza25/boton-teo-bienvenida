@@ -3,21 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenido · Bot-On</title>
+  <title>Bot&#8209;On · Acceso Beta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 400;
@@ -29,50 +21,35 @@
     /* ── HEADER ── */
     .header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       background: #1a1f5e;
       padding: 16px 24px;
       display: flex;
       align-items: center;
     }
-
     .header__logo-wrap {
       display: flex;
       flex-direction: column;
       line-height: 1;
     }
-
-    .header__logo-name {
-      font-family: 'Ubuntu', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #ffffff;
-      letter-spacing: -0.3px;
-    }
-
     .header__logo-sub {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 400;
       font-size: 12px;
       color: #6AB7EA;
       margin-top: 2px;
-      letter-spacing: 0.2px;
     }
 
-    /* ── SECCIÓN 1: BIENVENIDA ── */
+    /* ── HERO ── */
     .hero {
-      background: #6AB7EA;
+      background: #008bdb;
       padding: 120px 24px 80px;
     }
-
     .hero__inner {
       max-width: 720px;
       margin: 0 auto;
     }
-
     .hero__badge {
       display: inline-block;
       background: #1a1f5e;
@@ -85,35 +62,90 @@
       border-radius: 100px;
       margin-bottom: 28px;
     }
-
     .hero__headline {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
       font-size: clamp(28px, 4vw, 48px);
-      color: #1a1f5e;
+      color: #ffffff;
       line-height: 1.15;
       margin-bottom: 24px;
     }
-
     .hero__body {
-      color: rgba(26, 31, 94, 0.8);
+      color: rgba(255,255,255,0.88);
       font-weight: 300;
       font-size: 17px;
       line-height: 1.65;
       margin-bottom: 16px;
     }
 
-    /* ── SECCIÓN 2: QUÉ HACE TEO ── */
-    .features {
+    /* ── REGALO ── */
+    .gift-section {
       background: #ffffff;
-      padding: 80px 24px;
+      padding: 60px 24px;
+    }
+    .gift-section__inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .gift-card {
+      background: linear-gradient(135deg, #1a1f5e, #008bdb);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,139,219,0.18);
+    }
+    .gift-card__icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+    .gift-card__title {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .gift-card__text {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(255,255,255,0.90);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .gift-card__badge {
+      display: inline-block;
+      background: #ffffff;
+      color: #008bdb;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 24px;
+      border-radius: 100px;
+    }
+    .gift-card__condition {
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.50);
+      font-style: italic;
     }
 
+    /* ── FEATURES ── */
+    .features {
+      background: #f4f8fb;
+      padding: 80px 24px;
+    }
     .features__inner {
       max-width: 1040px;
       margin: 0 auto;
     }
-
     .section-label {
       display: block;
       font-family: 'Ubuntu', sans-serif;
@@ -124,7 +156,6 @@
       color: #008bdb;
       margin-bottom: 12px;
     }
-
     .section-title {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
@@ -133,31 +164,24 @@
       margin-bottom: 48px;
       line-height: 1.2;
     }
-
     .cards {
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
     }
-
     @media (min-width: 680px) {
-      .cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .cards { grid-template-columns: repeat(3, 1fr); }
     }
-
     .card {
-      background: #f0f4f8;
+      background: #ffffff;
       border-radius: 14px;
       padding: 28px;
-      border: 1px solid rgba(0, 139, 219, 0.12);
+      border: 1px solid rgba(0,139,219,0.15);
     }
-
     .card__number {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #008bdb, #6AB7EA);
+      background: linear-gradient(135deg, #1a1f5e, #008bdb);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -166,9 +190,7 @@
       font-size: 20px;
       color: #ffffff;
       margin-bottom: 20px;
-      flex-shrink: 0;
     }
-
     .card__title {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
@@ -177,105 +199,135 @@
       margin-bottom: 10px;
       line-height: 1.3;
     }
-
     .card__body {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 300;
       font-size: 15px;
-      color: rgba(26, 31, 94, 0.75);
+      color: rgba(26,31,94,0.70);
       line-height: 1.6;
     }
 
-    /* ── SECCIÓN 3: POR QUÉ ESTÁS AQUÍ ── */
+    /* ── SURVEY INTRO ── */
     .why {
-      background: #6AB7EA;
+      background: #1a1f5e;
       padding: 80px 24px;
       text-align: center;
     }
-
     .why__inner {
       max-width: 640px;
       margin: 0 auto;
     }
-
     .why__title {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
       font-size: clamp(22px, 3vw, 34px);
-      color: #1a1f5e;
+      color: #ffffff;
       margin-bottom: 20px;
       line-height: 1.2;
     }
-
     .why__body {
-      color: rgba(26, 31, 94, 0.8);
+      color: rgba(255,255,255,0.70);
       font-weight: 300;
       font-size: 17px;
       line-height: 1.65;
     }
+    .why__highlight {
+      display: inline-block;
+      margin-top: 28px;
+      background: rgba(106,183,234,0.12);
+      border: 1px solid rgba(106,183,234,0.28);
+      border-radius: 12px;
+      padding: 16px 28px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 16px;
+      color: #6AB7EA;
+      line-height: 1.5;
+    }
+    .why__highlight strong { color: #ffffff; }
 
-    /* ── SECCIÓN 4: FORMULARIO TALLY ── */
+    /* ── FORM ── */
     .form-section {
       background: #ffffff;
       padding: 60px 24px;
     }
-
     .form-section__inner {
       max-width: 740px;
       margin: 0 auto;
     }
 
-    /* ── SECCIÓN 5: CIERRE ── */
-    .closing {
-      background: #1a1f5e;
-      padding: 60px 24px;
+    /* ── IG CTA ── */
+    .ig-section {
+      background: #f4f8fb;
+      padding: 64px 24px;
       text-align: center;
     }
-
-    .closing__inner {
-      max-width: 600px;
+    .ig-section__inner {
+      max-width: 520px;
       margin: 0 auto;
     }
-
-    .closing__title {
+    .ig-section h3 {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
-      font-size: clamp(20px, 2.8vw, 30px);
-      color: #ffffff;
-      margin-bottom: 16px;
-      line-height: 1.25;
+      font-size: 28px;
+      color: #1a1f5e;
+      margin-bottom: 14px;
+      line-height: 1.3;
     }
-
-    .closing__body {
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 300;
+    .ig-section p {
+      font-family: 'Ubuntu', sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      color: rgba(26,31,94,0.60);
+      line-height: 1.65;
+      margin-bottom: 28px;
     }
+    .ig-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+    .ig-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(131,58,180,0.25);
+    }
+    .ig-btn svg { width: 20px; height: 20px; }
 
     /* ── FOOTER ── */
     .footer {
-      background: #12174a;
-      padding: 24px;
+      background: #1a1f5e;
+      padding: 40px 24px;
       text-align: center;
     }
-
     .footer__copy {
       font-family: 'Ubuntu', sans-serif;
-      font-weight: 400;
       font-size: 13px;
-      color: rgba(255, 255, 255, 0.3);
-      margin-bottom: 8px;
+      color: rgba(255,255,255,0.30);
+      margin-bottom: 10px;
     }
-
     .footer__disclaimer {
       font-family: 'Ubuntu', sans-serif;
       font-weight: 300;
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(255,255,255,0.22);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.55;
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 110px 20px 70px; }
+      .features, .why, .form-section { padding: 60px 20px; }
+      .section-title { font-size: 26px; }
+      .card { padding: 24px 18px; }
     }
   </style>
 </head>
@@ -284,103 +336,130 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header__logo-wrap">
-      <img src="Recurso_7.png" alt="Bot-On" style="height:36px;">
+      <img src="Recurso_7.png" alt="Bot&#8209;On" style="height:36px;">
       <span class="header__logo-sub">AI Cognitive Assistant</span>
     </div>
   </header>
 
-  <!-- SECCIÓN 1: BIENVENIDA -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero__inner">
-      <span class="hero__badge">Bot-On · Acceso Beta</span>
-      <h1 class="hero__headline" id="hero-headline">Hola. Tu mente puede más.</h1>
+      <span class="hero__badge">Bot&#8209;On · Acceso Beta</span>
+      <h1 class="hero__headline" id="hero-headline">Tu mente,<br>actualizada.</h1>
       <p class="hero__body">
-        Bot-On entrena tu mente todos los días con ejercicios concretos por WhatsApp. Solo 3 minutos. Sin apps, sin complicaciones.
+        Tomamos cada comentario que nos diste y lo convertimos en algo mejor.
+        Bot&#8209;On mejoró porque tú estuviste desde el principio.
       </p>
       <p class="hero__body">
-        Has sido parte de este camino desde el principio. Lo que nos cuentes nos ayuda a construir algo mejor para ti y para muchas personas más.
+        Cada sesión que completaste construyó lo que tienes hoy.
+        Esto es lo que sigue.
       </p>
     </div>
   </section>
 
-  <!-- SECCIÓN: BANNER DE REGALO -->
-  <section style="background:#ffffff;padding:48px 24px;">
-    <div style="max-width:740px;margin:0 auto;">
-      <div style="background:linear-gradient(135deg,#008bdb,#6AB7EA);border-radius:20px;padding:40px;text-align:center;box-shadow:0 8px 32px rgba(0,139,219,0.18);">
-        <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">🎁</div>
-        <h3 style="font-family:'Ubuntu',sans-serif;font-weight:700;font-size:24px;color:#ffffff;margin-bottom:16px;line-height:1.2;">Un regalo por tu compromiso</h3>
-        <p style="font-family:'Ubuntu',sans-serif;font-weight:400;font-size:17px;color:rgba(255,255,255,0.9);line-height:1.7;margin-bottom:28px;">Tu compromiso construyó esto. Un mes más, sin costo. Porque lo mereces.</p>
-        <span style="display:inline-block;background:#ffffff;color:#008bdb;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:14px;padding:8px 24px;border-radius:100px;">1 mes adicional · Sin costo · Aplicado automáticamente</span>
+  <!-- REGALO -->
+  <section class="gift-section">
+    <div class="gift-section__inner">
+      <div class="gift-card">
+        <div class="gift-card__icon">🎁</div>
+        <h3 class="gift-card__title">Tu próximo mes es un regalo.</h3>
+        <p class="gift-card__text">
+          Cada sesión que completaste, cada respuesta que diste,
+          construyó lo que Bot&#8209;On es hoy.
+          Tu próximo mes es completamente gratis.
+        </p>
+        <span class="gift-card__badge">30 días gratis · Sin costo · Para ti</span>
+        <p class="gift-card__condition">* Se activan al completar la encuesta de experiencia.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 2: QUÉ HACE TEO -->
+  <!-- FEATURES -->
   <section class="features">
     <div class="features__inner">
-      <span class="section-label">Qué hace Bot-On</span>
-      <h2 class="section-title">Directo. Concreto. Sin excusas.</h2>
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Bot&#8209;On. Directo. Diario. Efectivo.</h2>
       <div class="cards">
         <div class="card">
           <div class="card__number">1</div>
-          <h3 class="card__title">Bot-On evalúa tu perfil cognitivo</h3>
-          <p class="card__body">Desde el primer día Bot-On entiende cómo funciona tu mente. Sin tests largos.</p>
+          <h3 class="card__title">Bot&#8209;On te escribe por WhatsApp</h3>
+          <p class="card__body">Sin apps. Sin login. Solo abre el chat y ya estás adentro.</p>
         </div>
         <div class="card">
           <div class="card__number">2</div>
-          <h3 class="card__title">Un ejercicio diario por WhatsApp</h3>
-          <p class="card__body">3 minutos. Concreto. A la hora que elijas. Sin descargar nada.</p>
+          <h3 class="card__title">3 minutos. Un ejercicio concreto.</h3>
+          <p class="card__body">Diseñado para tu perfil cognitivo. Breve, claro y con impacto real.</p>
         </div>
         <div class="card">
           <div class="card__number">3</div>
-          <h3 class="card__title">Se adapta con cada sesión</h3>
-          <p class="card__body">La IA de Bot-On ajusta cada ejercicio según tu avance. No hay dos perfiles iguales.</p>
+          <h3 class="card__title">Tu mente rinde más con cada sesión</h3>
+          <p class="card__body">El sistema aprende de ti. Cada ejercicio es más preciso que el anterior.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 3: POR QUÉ ESTÁS AQUÍ -->
+  <!-- SURVEY INTRO -->
   <section class="why">
     <div class="why__inner">
-      <h2 class="why__title">Cuéntanos cómo te ha ido con Bot-On.</h2>
+      <h2 class="why__title">Cuéntanos cómo te ha ido.</h2>
       <p class="why__body">
-        5 minutos para contarnos tu experiencia hasta ahora. No hay respuestas correctas, solo las tuyas. Lo que escribas aquí llega directo al equipo de Bot-On.
+        No hay respuestas correctas. Solo las tuyas.
+        Lo que escribas llega directo al equipo de Bot&#8209;On.
       </p>
+      <div class="why__highlight">
+        <strong>Completa la encuesta</strong> y activa<br>
+        tus 30 días gratis. 🎁
+      </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: FORMULARIO TALLY -->
+  <!-- FORMULARIO TALLY -->
   <section class="form-section">
     <div class="form-section__inner">
-      <iframe data-tally-src="https://tally.so/embed/44ooBB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Feedback Beta TEO"></iframe>
+      <iframe data-tally-src="https://tally.so/embed/MeJJdA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Feedback Beta TEO"></iframe>
       <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
   </section>
 
-  <!-- SECCIÓN 5: CIERRE -->
-  <section class="closing">
-    <div class="closing__inner">
-      <h2 class="closing__title">Gracias por ser parte de esto desde el principio.</h2>
-      <p class="closing__body">El equipo de Bot-On está contigo en cada sesión.</p>
+  <!-- IG CTA -->
+  <section class="ig-section">
+    <div class="ig-section__inner">
+      <h3>Síguenos en Instagram</h3>
+      <p>
+        Contenido sobre rendimiento cognitivo, ciencia aplicada y todo lo que
+        Bot&#8209;On está construyendo. Para quienes quieren rendir más cada día.
+      </p>
+      <a href="https://www.instagram.com/bot_on.ai/" target="_blank" class="ig-btn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+        </svg>
+        @bot_on.ai
+      </a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p class="footer__copy">© 2026 <img src="Recurso_7.png" alt="Bot-On" style="height:28px;vertical-align:middle;">. Todos los derechos reservados.</p>
-    <p class="footer__disclaimer">Bot-On no reemplaza la consulta médica profesional. El entrenamiento cognitivo es un servicio de bienestar mental complementario.</p>
+    <p class="footer__copy">
+      <img src="Recurso_7.png" alt="Bot&#8209;On" style="height:28px;display:inline-block;vertical-align:middle;margin-bottom:6px;"><br>
+      © 2026 Bot&#8209;On. Todos los derechos reservados.
+    </p>
+    <p class="footer__disclaimer">
+      Bot&#8209;On no reemplaza la consulta médica profesional.
+      El entrenamiento cognitivo es un servicio de bienestar mental complementario.
+    </p>
   </footer>
 
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
       var nombre = params.get('nombre');
-      if (nombre) {
-        nombre = nombre.trim();
-      }
-      if (nombre) {
-        document.getElementById('hero-headline').textContent = 'Hola ' + nombre + '. Tu mente puede más.';
+      if (nombre && nombre.trim() !== '') {
+        var n = nombre.trim().charAt(0).toUpperCase() + nombre.trim().slice(1);
+        document.getElementById('hero-headline').innerHTML = n + ',<br>tu mente actualizada.';
       }
     })();
   </script>
